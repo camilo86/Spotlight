@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         GridView gridView = (GridView) findViewById(R.id.gridview);
-        gridView.setAdapter(MovieAdapter(this)); // TODO: Create Movie adapter to fill up GridView
+        gridView.setAdapter(new MovieAdapter(this)); // TODO: Create Movie adapter to fill up GridView
 
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
