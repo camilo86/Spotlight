@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory
+        android:title="@string/main_settings" >
+        <ListPreference
+            android:key="sort_type"
+            android:entries="@array/sort_values"
+            android:summary="@string/sort_summary"
+            android:entryValues="@array/sort_values"
+            android:title="@string/sort_title"
+            android:defaultValue="pupular" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

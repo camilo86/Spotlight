@@ -22,21 +22,14 @@ import java.util.concurrent.ExecutionException;
 public class MovieAdapter extends BaseAdapter {
 
     private final String LOG_TAG = MovieAdapter.class.getSimpleName();
-    private FetchMovies moviesInfo = new FetchMovies();
+
     private List<String> urls = new ArrayList<String>();
     private Context mContext;
 
-    public MovieAdapter(Context context) {
+    public MovieAdapter(Context context, List urls) {
         this.mContext = context;
 
-        // Sets urls to a list of poster URL
-        try {
-            this.urls = Util.getPopularPosterURLList(moviesInfo.execute().get());
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        } catch (ExecutionException e) {
-            e.printStackTrace();
-        }
+        this.urls = urls;
 
     }
 
@@ -60,13 +53,11 @@ public class MovieAdapter extends BaseAdapter {
         ImageView view = (ImageView) convertView;
         if (view == null) {
             view = new ImageView(mContext);
-            //view.setScaleType(CENTER_CROP);
         }
 
-        // Get the image URL for the current position.
         String url = getItem(position);
 
-        // Trigger the download of the URL asynchronously into the image view.
+        // external library
         Picasso.with(mContext) //
                 .load(url) //
                 .placeholder(R.drawable.placeholder) //

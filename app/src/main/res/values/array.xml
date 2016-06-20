@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="sort_values">
+        <item name="popular">popular</item>
+        <item name="highest_rated">Highest rated</item>
+    </string-array>
+
+</resources>
